@@ -17,8 +17,8 @@ def _npm_bin() -> str:
     return subprocess.check_output(("npm.cmd", "bin"), text=True).strip()
 
 
-def _tw_path() -> str:
-    return 'npx.cmd tiddlywiki'
+# def _tw_path() -> str:
+#     return 'npx.cmd tiddlywiki'
 
 def _npx() -> str:
     return 'npx.cmd' 
@@ -192,7 +192,7 @@ def install(wiki_name: str, tw_version_spec: str, author: Optional[str],
         author = _whoami()
 
     _init_tzk_config()
-    _init_npm(wiki_name, tw_version_spec, author)
+    # _init_npm(wiki_name, tw_version_spec, author)
 
     if _tw_func is not None:
         _tw_func(wiki_name)

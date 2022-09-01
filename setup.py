@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="tiw",
-    version="0.0.3",
+    version="0.0.4",
     author="ibby",
     author_email="theibbster@proton.me",
     description="Tooling for my TiddlyWiki, forked from sobjornstad/tzk ",
