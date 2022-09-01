@@ -1,6 +1,10 @@
 Initially just making some edits so it works well with Windows (specifically I'm running from powershell, not sure if that makes a difference).
 
-Late I may adjust this so it fits my needs better
+I called it 'tiw' since my TiddlyWiki is called 'IdeaWiki'.
+
+Currently the commands work the same but instead of `tzk` use `tiw`.
+
+Later I may adjust this so it fits my needs better.
 
 ## Original documentation
 [![Documentation Status](https://readthedocs.org/projects/tzk/badge/?version=latest)](https://tzk.readthedocs.io/en/latest/?badge=latest)
@@ -23,8 +27,7 @@ Some basic knowledge of [TiddlyWiki](https://tiddlywiki.com)
     is necessary and assumed.
 
 
-Documentation / Installation
-----------------------------
+### Documentation / Installation
 
 Find a live version of the edition on the web with further instructions
     at https://sobjornstad.github.io/tzk/.
@@ -35,8 +38,7 @@ You can find the documentation for the CLI
     at https://tzk.readthedocs.io/en/latest/.
 
 
-Video walkthrough
------------------
+### Video walkthrough
 
 Since tzk is still in an alpha state,
     general instructions on how to use it are somewhat lacking at the moment.

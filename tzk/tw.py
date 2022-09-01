@@ -12,14 +12,6 @@ from tzk import git
 from tzk.util import pushd
 
 
-@functools.lru_cache(1)
-def _npm_bin() -> str:
-    return subprocess.check_output(("npm.cmd", "bin"), text=True).strip()
-
-
-# def _tw_path() -> str:
-#     return 'npx.cmd tiddlywiki'
-
 def _npx() -> str:
     return 'npx.cmd' 
 
@@ -75,32 +67,6 @@ def _init_tzk_config() -> None:
 
     with open("tzk_config.py", "w") as f:
         f.write(default_config)
-
-
-def _init_npm(wiki_name: str, tw_version_spec: str, author: str) -> None:
-    """
-    Create a package.json file for this repository, requiring TiddlyWiki
-    at the specified version, and install the npm dependencies.
-    """
-    print("tzk: Creating new package.json...")
-    PACKAGE_JSON = dedent("""
-    {
-        "name": "%(wiki_name)s",
-        "version": "1.0.0",
-        "description": "My nice notes",
-        "dependencies": {
-            "tiddlywiki": "%(tw_version_spec)s"
-        },
-        "author": "%(author)s",
-        "license": "See copyright notice in wiki"
-    }
-    """).strip() % ({'tw_version_spec': tw_version_spec, 'author': author,
-                     'wiki_name': wiki_name})
-    with open("package.json", "w") as f:
-        f.write(PACKAGE_JSON)
-
-    print("tzk: Installing npm packages from package.json...")
-    subprocess.check_call(("npm.cmd", "install"))
 
 
 def _init_tw(wiki_name: str) -> None:
