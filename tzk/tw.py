@@ -20,6 +20,9 @@ def _npm_bin() -> str:
 def _tw_path() -> str:
     return 'npx.cmd tiddlywiki'
 
+def _npx() -> str:
+    return 'npx.cmd' 
+
 
 @functools.lru_cache(1)
 def _whoami() -> str:
@@ -47,9 +50,9 @@ def exec(args: Sequence[Sequence[str]], base_wiki_folder: str = None) -> int:
     # must pushd into base wiki to find the tiddlywiki node_modules
     if base_wiki_folder is not None:
         with pushd(base_wiki_folder):
-            call_args = [_tw_path()]
+            call_args = [_npx(), 'tiddlywiki']
     else:
-        call_args = [_tw_path()]
+        call_args = [_npx(), 'tiddlywiki']
 
     if base_wiki_folder is not None:
         call_args.append(base_wiki_folder)
@@ -114,7 +117,7 @@ def _init_tw(wiki_name: str) -> None:
         old_edition_path = os.environ.get('TIDDLYWIKI_EDITION_PATH')
         os.environ['TIDDLYWIKI_EDITION_PATH'] = str(Path(__file__).parent / "editions")
         try:
-            subprocess.check_call((_tw_path(), "--init", "tzk"))
+            subprocess.check_call((_npx(), 'tiddlywiki', "--init", "tzk"))
         finally:
             if old_edition_path:
                 os.environ['TIDDLYWIKI_EDITION_PATH'] = old_edition_path
