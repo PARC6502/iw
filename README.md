@@ -1,3 +1,8 @@
+Initially just making some edits so it works well with Windows (specifically I'm running from powershell, not sure if that makes a difference).
+
+Late I may adjust this so it fits my needs better
+
+## Original documentation
 [![Documentation Status](https://readthedocs.org/projects/tzk/badge/?version=latest)](https://tzk.readthedocs.io/en/latest/?badge=latest)
 
 **tzk** (*TiddlyZettelKasten*)
