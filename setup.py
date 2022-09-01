@@ -8,14 +8,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="iw",
+    name="tiw",
     version="0.0.1",
     author="ibby",
     author_email="theibbster@proton.me",
     description="Tooling for my TiddlyWiki, forked from sobjornstad/tzk ",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/PARC6502/iw",
+    url="https://github.com/PARC6502/tiw",
     packages=setuptools.find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -32,7 +32,7 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": [
-            "iw = tzk.__main__:launch"
+            "tiw = tzk.__main__:launch"
         ],
     },
     python_requires='>=3.6',
