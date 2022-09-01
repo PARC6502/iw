@@ -14,18 +14,18 @@ from tzk.util import pushd
 
 @functools.lru_cache(1)
 def _npm_bin() -> str:
-    return subprocess.check_output(("npm", "bin"), text=True).strip()
+    return subprocess.check_output(("npm.cmd", "bin"), text=True).strip()
 
 
 def _tw_path() -> str:
-    return _npm_bin() + "/tiddlywiki"
+    return 'npx.cmd tiddlywiki'
 
 
 @functools.lru_cache(1)
 def _whoami() -> str:
     "Try to guess the user's name."
     try:
-        return subprocess.check_output(("whoami",), text=True).strip()
+        return subprocess.check_output(("whoami",), text=True).strip().split('\\')[-1]
     except subprocess.CalledProcessError:
         return "user"
 
@@ -97,7 +97,7 @@ def _init_npm(wiki_name: str, tw_version_spec: str, author: str) -> None:
         f.write(PACKAGE_JSON)
 
     print("tzk: Installing npm packages from package.json...")
-    subprocess.check_call(("npm", "install"))
+    subprocess.check_call(("npm.cmd", "install"))
 
 
 def _init_tw(wiki_name: str) -> None:
